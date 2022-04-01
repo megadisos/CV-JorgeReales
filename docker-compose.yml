@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+    api:
+        build: ./backend
+        network_mode: host
+        volumes:
+            - ./backend/cv.js:/cv/cv.js
+            - ./backend/config.js:/cv/config.js
+            - ./backend/queries.js:/cv/queries.js
+    db:
+        image: postgres
+        restart: always
+        volumes:
+            - ${PGLOCAL}:${PGDATA}
+        environment:
+            - POSTGRES_PASSWORD=${PGPASSWORD}
+            - POSTGRES_DB=${PGDB}
+            - PGDATA=${PGDATA}
+            - POSTGRES_USER=${PGUSER}
+        ports:
+            - ${PGPORT}:5432
+    frontend:
+        build: ./frontend
+        network_mode: host
+        volumes:
+            - ./frontend:/frontend
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8085:8080
+
+            
