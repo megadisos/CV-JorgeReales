@@ -1,0 +1,37 @@
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #00034d #030303;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #030303;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #00034d;
+    border-radius: 1px;
+    border: 0px none #ffffff;
+  }
+
+  .menu a{
+    color: white;
+    text-decoration: none;
+    
+  }
+  .menu  a:hover{
+    background-color: #00034d;
+  }
+
+  .brands a{
+    color: white;
+    text-decoration: none;
+    
+  }
+ 
